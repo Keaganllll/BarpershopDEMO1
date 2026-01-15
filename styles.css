@@ -206,7 +206,17 @@ nav a:hover{
   transition: width .18s ease;
 }
 
-.hero-links a:hover::after,
+.<div class="hero-actions">
+  <a href="book.html" class="hero-main-btn">Book Appointment</a>
+
+  <div class="hero-sub-links">
+    <a href="contact.html">Call</a>
+    <span>•</span>
+    <button type="button" onclick="openDirections('123 Luxury Ave, City, State')">
+      Get Directions
+    </button>
+  </div>
+</div>-links a:hover::after,
 .hero-links button:hover::after{
   width:100%;
 }
@@ -698,21 +708,66 @@ nav a:hover{
 
 .hero-actions{
   margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* MAIN BOOK BUTTON */
 .hero-main-btn{
   display: inline-block;
-  padding: 16px 44px;
-  background: rgba(255,255,255,.9);
-  color: #000;
-  font-size: 1rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-weight: 400;
-  border-radius: 2px;
+  padding: 14px 34px;
+  background: rgba(130,130,130,0.30);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.92);
   text-decoration: none;
-  transition: all .25s ease;
+  text-transform: lowercase;
+  letter-spacing: 0.10em;
+  border-radius: 2px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform .15s ease, background .15s ease;
+}
+
+.hero-main-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(150,150,150,0.34);
+}
+
+.hero-sub-links{
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+}
+
+.hero-sub-links a,
+.hero-sub-links button{
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: rgba(255,255,255,0.82);
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+}
+
+.hero-sub-links a:hover,
+.hero-sub-links button:hover{
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.hero-sub-links span{
+  opacity: 0.55;
 }
 
 .hero-main-btn:hover{
