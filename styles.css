@@ -557,3 +557,61 @@ footer{
 .hero .hero-links button{
   font-family: "Montserrat", system-ui, sans-serif;
 }
+/* === OVERRIDE: HERO BUTTONS (clean gray boxes) === */
+.hero-links{
+  display:flex !important;
+  justify-content:center !important;
+  gap:16px !important;
+  flex-wrap:wrap !important;
+  margin-top:26px !important;
+}
+
+/* Make the links look like clean gray buttons */
+.hero-links a,
+.hero-links button{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  padding:14px 26px !important;
+  border-radius:10px !important;
+  background:rgba(255,255,255,0.08) !important;
+  border:1px solid rgba(255,255,255,0.18) !important;
+
+  color:rgba(255,255,255,0.92) !important;
+  font-size:1.02rem !important;
+  letter-spacing:0.16em !important;
+  text-transform:uppercase !important;
+  font-weight:500 !important;
+
+  box-shadow:none !important;
+  text-decoration:none !important;
+  transition:background .18s ease, border-color .18s ease, transform .18s ease !important;
+}
+
+.hero-links a:hover,
+.hero-links button:hover{
+  background:rgba(255,255,255,0.12) !important;
+  border-color:rgba(255,255,255,0.30) !important;
+  transform:translateY(-1px) !important;
+}
+
+/* Kill any underline animations you had */
+.hero-links a::after,
+.hero-links button::after{
+  display:none !important;
+}
+
+@media (max-width:700px){
+  .hero-links{
+    justify-content:flex-start !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:12px !important;
+  }
+  .hero-links a,
+  .hero-links button{
+    width:100% !important;
+    max-width:380px !important;
+  }
+}
