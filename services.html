@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services • PLACEHOLDER BARBER LOUNGE</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services • Placeholder Barber Lounge</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
@@ -12,10 +12,10 @@
   <div class="container header-inner">
     <div class="brand">
       <div class="name">PLACEHOLDER BARBER LOUNGE</div>
-      <div class="sub">Luxury Cuts • City, State</div>
+      <div class="tag">Luxury Cuts • City, State</div>
     </div>
-    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
-    <nav id="siteNav" aria-label="Primary">
+    <button class="menu-btn" id="menuBtn" type="button">☰ <span>Menu</span></button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -27,85 +27,58 @@
 </header>
 
 <main>
-  <section>
+  <section class="page-title">
     <div class="container">
-      <div class="kicker">Services</div>
-      <h1>Signature Services</h1>
-      <p class="small">Clean pricing, premium results. (Demo prices — replace later.)</p>
+      <h1>Services</h1>
+      <p>Replace these with the shop’s real services and pricing.</p>
+    </div>
+  </section>
 
-      <div class="grid-2" style="margin-top:16px;">
-        <div class="service">
-          <div>
-            <h3>Classic Cut</h3>
-            <div class="small">Consult • Cut • Style</div>
-          </div>
-          <div class="price">$35</div>
+  <section class="section small">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Signature Cut</h3>
+          <p>Classic cut, clean finish, styled and ready.</p>
+          <p style="margin-top:10px; color:rgba(255,255,255,.9)">$XX</p>
         </div>
-
-        <div class="service">
-          <div>
-            <h3>Skin Fade</h3>
-            <div class="small">Fade • Detail • Finish</div>
-          </div>
-          <div class="price">$45</div>
+        <div class="card">
+          <h3>Fade / Taper</h3>
+          <p>Skin fade, mid fade, low taper — crisp blends.</p>
+          <p style="margin-top:10px; color:rgba(255,255,255,.9)">$XX</p>
         </div>
-
-        <div class="service">
-          <div>
-            <h3>Cut + Beard</h3>
-            <div class="small">Line-up • Beard work • Hot towel</div>
-          </div>
-          <div class="price">$60</div>
-        </div>
-
-        <div class="service">
-          <div>
-            <h3>Beard Detail</h3>
-            <div class="small">Shape • Trim • Razor finish</div>
-          </div>
-          <div class="price">$25</div>
-        </div>
-
-        <div class="service">
-          <div>
-            <h3>Kids Cut</h3>
-            <div class="small">Ages 12 & under</div>
-          </div>
-          <div class="price">$30</div>
-        </div>
-
-        <div class="service">
-          <div>
-            <h3>VIP Package</h3>
-            <div class="small">Cut + Beard + Enhancements</div>
-          </div>
-          <div class="price">$80</div>
+        <div class="card">
+          <h3>Beard + Lineup</h3>
+          <p>Lineup, shape-up, and beard detail work.</p>
+          <p style="margin-top:10px; color:rgba(255,255,255,.9)">$XX</p>
         </div>
       </div>
 
-      <div style="margin-top:16px;">
-        <a class="btn primary" href="book.html">Book Now</a>
+      <div style="height:18px"></div>
+
+      <div class="card">
+        <h3>Notes</h3>
+        <p>Want it more “real”? Add cancellation policy, late policy, and what’s included in each service.</p>
       </div>
     </div>
   </section>
 </main>
 
-<!-- MAP MODAL -->
-<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
-    <div class="kicker">Directions</div>
-    <h3>Open in Maps</h3>
-    <div class="small">Choose your preferred maps app.</div>
-    <div class="row">
-      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
-      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
-    </div>
-    <div class="close-row">
-      <button class="x" onclick="closeDirections()">Close</button>
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Placeholder Barber Lounge</div>
+    <div class="footer-links">
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
-</div>
+</footer>
 
-<script src="script.js"></script>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("nav");
+  btn.addEventListener("click", () => nav.classList.toggle("open"));
+</script>
 </body>
 </html>
