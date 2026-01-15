@@ -485,3 +485,71 @@ footer{
     max-width: 360px;
   }
 }
+/* =========================
+   HERO BUTTONS (clean + premium)
+   Paste at VERY BOTTOM
+========================= */
+
+.hero .hero-links{
+  justify-content: center;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+/* Clean premium buttons */
+.hero .hero-links a,
+.hero .hero-links button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 14px 26px;
+  border-radius: 10px;                 /* cleaner than pill */
+  background: rgba(255,255,255,0.06);  /* subtle gray */
+  border: 1px solid rgba(255,255,255,0.16);
+
+  color: rgba(255,255,255,0.90);
+  font-size: 1.02rem;
+  letter-spacing: 0.16em;              /* PrimeTime-ish */
+  text-transform: uppercase;
+  font-weight: 500;
+
+  box-shadow: none;                    /* remove “cheap” shadow */
+  backdrop-filter: none;               /* remove heavy glass look */
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+/* Hover = slightly brighter + tiny lift */
+.hero .hero-links a:hover,
+.hero .hero-links button:hover{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-1px);
+}
+
+/* Active press */
+.hero .hero-links a:active,
+.hero .hero-links button:active{
+  transform: translateY(0px);
+}
+
+/* Remove underline animation */
+.hero .hero-links a::after,
+.hero .hero-links button::after{
+  display:none !important;
+}
+
+/* Mobile: stacked, full width, still clean */
+@media (max-width: 700px){
+  .hero .hero-links{
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero .hero-links a,
+  .hero .hero-links button{
+    width: 100%;
+    max-width: 380px;
+  }
+}
