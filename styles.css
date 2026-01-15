@@ -553,3 +553,7 @@ footer{
     max-width: 380px;
   }
 }
+.hero .hero-links a,
+.hero .hero-links button{
+  font-family: "Montserrat", system-ui, sans-serif;
+}
