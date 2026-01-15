@@ -1,190 +1,194 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PLACEHOLDER BARBER LOUNGE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placeholder Barber Lounge</title>
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- IMPORTANT: cache-buster so changes show immediately -->
+  <link rel="stylesheet" href="styles.css?v=1" />
 </head>
+
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <div class="brand-name">PLACEHOLDER BARBER LOUNGE</div>
+        <div class="brand-sub">Luxury Cuts • City, State</div>
+      </a>
 
-<header>
-  <div class="container header-inner">
-    <div class="brand">
-      <div class="name">PLACEHOLDER BARBER LOUNGE</div>
-      <div class="sub">Luxury Cuts • City, State</div>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="book.html">Book</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
-
-    <nav id="siteNav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-      <a href="book.html">Book</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
   <!-- HERO -->
-  <section class="hero hero-bg">
-  <div class="container hero-center">
+  <main>
+    <section class="hero" aria-label="Hero">
+      <!-- Put your background image file in the SAME folder and name it hero.jpg -->
+      <div class="hero-bg" role="img" aria-label="Barbershop hero background"></div>
+      <div class="hero-overlay"></div>
 
-    <div class="card hero-left hero-overlay">
-      <h1 class="welcome-title">WELCOME TO <span class="shop-name">PLACEHOLDER BARBER LOUNGE</span></h1>
-<p class="shop-sub">City, State</p>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="hero-kicker">Welcome to</div>
 
-     <div class="welcome-actions">
-  <a class="welcome-btn" href="book.html">Book Appointment</a>
-  <a class="welcome-btn" href="contact.html">Call</a>
-  <a class="welcome-btn" href="#" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST'); return false;">Get Directions</a>
-</div>
+          <!-- CHANGE THIS NAME WHEN YOU PICK A SHOP -->
+          <h1 class="hero-title">PLACEHOLDER BARBER LOUNGE</h1>
 
-      <div class="badge-row">
-        <div class="badge">Easy online booking</div>
-        <div class="badge">Attention to detail</div>
-        <div class="badge">Mobile-first design</div>
-      </div>
-    </div>
+          <div class="hero-meta">City, State</div>
 
-  </div>
-</section>
-
-  <!-- FEATURED WORK STRIP -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="kicker">Featured Work</div>
-      <h2>Clean finishes. Sharp details.</h2>
-      <div class="strip" style="margin-top:14px;">
-        <img alt="Fade haircut"
-          src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=1400&q=80" />
-        <img alt="Barber tools"
-          src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=80" />
-        <img alt="Detail work"
-          src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=1400&q=80" />
-      </div>
-      <div style="margin-top:14px;">
-        <a class="btn" href="gallery.html">View Full Gallery</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSION + STORY -->
-  <section>
-    <div class="container grid-2">
-      <div class="card pad">
-        <div class="kicker">Our Mission</div>
-        <h2>The best — or nothing.</h2>
-        <p class="small">
-          We deliver a prime experience from the moment you walk in until you step out.
-          Our team keeps standards high: clean blends, sharp lines, and consistent results.
-        </p>
-        <ul class="list">
-          <li>Professional environment</li>
-          <li>Consistent, repeatable quality</li>
-          <li>Fast scheduling + on-time service</li>
-        </ul>
-      </div>
-
-      <div class="card pad">
-        <div class="kicker">The Story</div>
-        <h2>Luxury service, real relationships.</h2>
-        <p class="small">
-          We’re built on detail, respect, and craft. Every haircut represents us — and we take that seriously.
-          Whether you’re here for a fresh fade, beard work, or a full transformation, we bring the same energy every time.
-        </p>
-        <div class="hr"></div>
-        <div class="small"><b>New here?</b> Start with any service — booking takes under 30 seconds.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATION / HOURS (demo placeholders) -->
-  <section>
-    <div class="container">
-      <div class="kicker">Visit</div>
-      <h2>Location & Hours</h2>
-
-      <div class="grid-2" style="margin-top:14px;">
-        <div class="card pad">
-          <h3>Address</h3>
-          <p class="small" style="margin-top:8px;">
-            123 Luxury Ave, Suite 100<br>
-            City, ST 00000
-          </p>
-          <div class="actions" style="margin-top:10px;">
-            <a class="btn" href="tel:+13165551234">Call</a>
-            <button class="btn primary" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">Get Directions</button>
+          <!-- Text links (NOT bubbles) -->
+          <div class="hero-actions" role="navigation" aria-label="Hero actions">
+            <a class="hero-action" href="book.html">Book Appointment</a>
+            <span class="divider">|</span>
+            <a class="hero-action" href="tel:+13165551234">Call</a>
+            <span class="divider">|</span>
+            <button class="hero-action button-link" type="button"
+              onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">
+              Get Directions
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="card pad">
-          <h3>Hours</h3>
-          <p class="small" style="margin-top:8px;">
-            Mon–Thu: 9am – 6pm<br>
-            Fri: 9am – 7pm<br>
-            Sat: 9am – 5pm<br>
-            Sun: Closed
-          </p>
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="line"></span>
+        <span class="text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="section">
+      <div class="container">
+        <div class="section-kicker">Featured Work</div>
+        <h2 class="section-title">Clean finishes. Sharp details.</h2>
+
+        <div class="grid-3">
+          <div class="img-card" style="background-image:url('https://images.unsplash.com/photo-1520975958225-113c6f8bbd85?auto=format&fit=crop&w=1200&q=60');"></div>
+          <div class="img-card" style="background-image:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=60');"></div>
+          <div class="img-card" style="background-image:url('https://images.unsplash.com/photo-1517838277536-f5f99be50125?auto=format&fit=crop&w=1200&q=60');"></div>
+        </div>
+
+        <p class="muted top-space">
+          Swap these images later with the shop’s real photos.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-kicker">Why choose us</div>
+        <h2 class="section-title">Luxury service, consistent results.</h2>
+
+        <div class="grid-3 cards">
+          <div class="card">
+            <h3>Premium experience</h3>
+            <p>Clean atmosphere, attention to detail, and a sharp finish every time.</p>
+          </div>
+          <div class="card">
+            <h3>Easy booking</h3>
+            <p>Fast online booking and clear communication for a smooth visit.</p>
+          </div>
+          <div class="card">
+            <h3>Professional barbers</h3>
+            <p>Skilled cuts, fades, tapers, beard work, and modern styling.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-box">
-      <div class="footer-title">Say Hello</div>
-      <div class="small" style="margin-top:10px;">(316) 555-1234 • City, ST</div>
+    <!-- LOCATION -->
+    <section class="section">
+      <div class="container">
+        <div class="section-kicker">Visit</div>
+        <h2 class="section-title">Location & hours</h2>
+
+        <div class="grid-2 cards">
+          <div class="card">
+            <h3>Address</h3>
+            <p class="mono">
+              123 Luxury Ave<br />
+              Suite 100<br />
+              City, ST
+            </p>
+
+            <div class="inline-actions">
+              <a class="text-link" href="tel:+13165551234">Call</a>
+              <span class="dot">•</span>
+              <button class="text-link button-link" type="button"
+                onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">
+                Get Directions
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Hours</h3>
+            <p class="mono">
+              Mon–Fri: 10am–7pm<br />
+              Sat: 10am–5pm<br />
+              Sun: Closed
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> Placeholder Barber Lounge</div>
       <div class="footer-links">
-        <a href="contact.html">Contact</a>
         <a href="book.html">Book</a>
-        <button class="btn" style="padding:10px 12px;" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">Directions</button>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-box">
-      <div class="footer-title">Quick Links</div>
-      <div class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-      </div>
-      <div class="small" style="margin-top:12px;">© <span id="y"></span> Placeholder Barber Lounge</div>
-    </div>
-  </div>
-</footer>
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<!-- MAP MODAL (Apple / Google choice) -->
-<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
-    <div class="kicker">Directions</div>
-    <h3>Open in Maps</h3>
-    <div class="small">Choose your preferred maps app.</div>
+    // Apple Maps on iPhone/iPad/Mac Safari, Google Maps everywhere else
+    function openDirections(address) {
+      const encoded = encodeURIComponent(address);
 
-    <div class="row">
-      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
-      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
-    </div>
+      const ua = navigator.userAgent || "";
+      const isAppleDevice = /iPhone|iPad|iPod|Macintosh/.test(ua);
 
-    <div class="close-row">
-      <button class="x" onclick="closeDirections()">Close</button>
-    </div>
-  </div>
-</div>
+      // iOS prefers maps://
+      // macOS Safari will open Apple Maps via maps.apple.com
+      if (/iPhone|iPad|iPod/.test(ua)) {
+        window.location.href = `maps://?q=${encoded}`;
+      } else if (isAppleDevice) {
+        window.open(`https://maps.apple.com/?q=${encoded}`, "_blank");
+      } else {
+        window.open(`https://www.google.com/maps/search/?api=1&query=${encoded}`, "_blank");
+      }
+    }
 
-<script src="script.js"></script>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    // Simple mobile menu toggle
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('.site-nav');
+
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
