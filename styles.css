@@ -1,280 +1,456 @@
 /* =========================
-   RESET + VARIABLES
+   PRIME-TIME-STYLE THEME
+   (Black + White Luxury)
+   Paste this entire file
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* --------- Base / Variables --------- */
+:root{
+  --bg: #0b0b0c;
+  --bg2:#0f0f11;
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.08);
+  --line: rgba(255,255,255,.12);
+
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --radius: 18px;
+  --radius2: 26px;
+
+  --shadow: 0 20px 60px rgba(0,0,0,.55);
+  --shadow2: 0 10px 30px rgba(0,0,0,.45);
+
+  --max: 1120px;
+
+  --h1: clamp(2.2rem, 4.6vw, 4rem);
+  --h2: clamp(1.4rem, 2.6vw, 2rem);
+  --p:  clamp(1rem, 1.2vw, 1.08rem);
 }
 
-:root {
-  --bg: #0b0b0b;
-  --panel: rgba(255,255,255,0.06);
-  --panel-hover: rgba(255,255,255,0.1);
-  --text: #ffffff;
-  --muted: #b5b5b5;
-  --line: rgba(255,255,255,0.12);
-  --accent: #ffffff;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
-  background: var(--bg);
+/* Use a PrimeTime-ish clean font (no downloads needed) */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background: radial-gradient(1200px 700px at 50% -10%, rgba(255,255,255,.09), transparent 65%),
+              linear-gradient(180deg, var(--bg), var(--bg2));
   color: var(--text);
-  line-height: 1.6;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* =========================
-   GLOBAL
-========================= */
-a {
-  color: inherit;
-  text-decoration: none;
+a{ color: inherit; text-decoration: none; }
+img{ max-width:100%; display:block; }
+p{ font-size: var(--p); color: var(--muted); margin: 0 0 14px; }
+h1,h2,h3{ margin:0 0 10px; line-height:1.1; }
+h2{ font-size: var(--h2); letter-spacing: .2px; }
+small,.mini{ color: var(--muted); }
+
+/* Layout container */
+.container{
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
 }
 
-.container {
-  width: min(1200px, 92%);
-  margin: auto;
-}
-
-section {
-  padding: 80px 0;
-}
-
-/* =========================
-   HEADER / NAV
-========================= */
-header {
+/* --------- Header / Nav --------- */
+header{
   position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.7);
-  border-bottom: 1px solid var(--line);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 0;
-}
-
-.logo {
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-nav {
-  display: flex;
-  gap: 22px;
-}
-
-nav a {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: var(--text);
-}
-
-/* =========================
-   HERO (BACKGROUND IMAGE)
-========================= */
-.hero {
-  min-height: 90vh;
-  display: grid;
-  align-items: center;
-  background:
-    linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.45)),
-    url("hero.jpg") center / cover no-repeat;
-}
-
-.hero-box {
-  max-width: 560px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 48px;
+  top:0;
+  z-index: 50;
+  background: rgba(10,10,11,.72);
   backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.hero-box h1 {
-  font-size: clamp(36px, 5vw, 54px);
-  margin-bottom: 16px;
-}
-
-.hero-box p {
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-
-/* =========================
-   BUTTONS (LUXURY)
-========================= */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--text);
-  transition: all .25s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  background: var(--panel-hover);
-}
-
-.btn.primary {
-  background: #fff;
-  color: #000;
-}
-
-.btn.primary:hover {
-  background: #eaeaea;
-}
-
-.btn-group {
-  display: flex;
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
   gap: 14px;
-  flex-wrap: wrap;
+  padding: 14px 0;
 }
 
-/* =========================
-   FEATURE STRIP
-========================= */
-.strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+.brand-wrap{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 220px;
 }
 
-.strip div {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px;
-  font-size: 14px;
+.logo-text{
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .95rem;
+  color: var(--white);
+  white-space: nowrap;
 }
 
-/* =========================
-   SECTIONS
-========================= */
-.section-title {
-  font-size: 28px;
-  margin-bottom: 12px;
+/* nav links desktop */
+nav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
 }
 
-.section-sub {
-  color: var(--muted);
-  margin-bottom: 40px;
+nav a{
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.82);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .01em;
+  transition: .2s ease;
+  border: 1px solid transparent;
 }
 
-/* =========================
-   CARDS
-========================= */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+nav a:hover{
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.12);
 }
 
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 16px;
+/* active look if you add class="active" in HTML */
+nav a.active{
+  color: var(--black);
+  background: var(--white);
+  border-color: rgba(255,255,255,.25);
+}
+
+/* mobile menu button (if you have it in HTML) */
+.menu-btn{
+  display:none;
+  align-items:center;
+  gap:10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.menu-btn:active{ transform: translateY(1px); }
+
+/* --------- Hero (Homepage) --------- */
+.hero{
+  padding: 40px 0 28px;
+  position: relative;
+}
+
+/* If you want a background image like PrimeTime:
+   Add class="hero hero--bg" and set --hero-img below in HTML inline style OR keep default. */
+.hero--bg{
+  padding: 56px 0 34px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.65)),
+    var(--hero-img, url("https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=2400&q=80"));
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+/* Grid used in your current theme */
+.hero-grid{
+  display:grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr);
+  gap: 26px;
+  align-items: center;
+}
+
+/* Left card (big text block) */
+.hero-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius2);
   padding: 26px;
-  transition: all .25s ease;
+  box-shadow: var(--shadow);
 }
 
-.card:hover {
-  background: var(--panel-hover);
-  transform: translateY(-4px);
+/* eyebrow */
+.kicker,
+.hero-kicker{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: .75rem;
+  color: rgba(255,255,255,.78);
+  margin-bottom: 10px;
 }
 
-/* =========================
-   LOCATION / INFO
-========================= */
-.info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+/* Big heading */
+.hero h1{
+  font-size: var(--h1);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 10px;
 }
 
-.info-box {
-  background: var(--panel);
-  border: 1px solid var(--line);
+/* Subtext */
+.hero .lead{
+  font-size: 1.06rem;
+  color: rgba(255,255,255,.72);
+  max-width: 62ch;
+}
+
+/* Button row */
+.hero-actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* “chips” row like PrimeTime */
+.hero-chips{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Right “image” / panel */
+.hero-right{
+  min-height: 360px;
+  border-radius: var(--radius2);
+  border: 1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(900px 300px at 30% 20%, rgba(255,255,255,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  box-shadow: var(--shadow2);
+  overflow:hidden;
+  position: relative;
+}
+
+/* If you place an img inside .hero-right, make it look premium */
+.hero-right img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  opacity: .85;
+  filter: contrast(1.05) saturate(.9);
+}
+
+/* Optional: subtle sheen */
+.hero-right::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.10), transparent);
+  transform: rotate(12deg);
+  animation: sheen 7s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes sheen{
+  0%,60%{ transform: translateX(-30%) rotate(12deg); opacity:.0; }
+  75%{ opacity:.25; }
+  100%{ transform: translateX(30%) rotate(12deg); opacity:0; }
+}
+
+/* --------- Buttons (fixes “boxy” look) --------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+  font-weight: 800;
+  letter-spacing: .02em;
+  transition: .18s ease;
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
+
+.btn:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+}
+
+.btn:active{
+  transform: translateY(0px);
+}
+
+.btn.primary{
+  background: var(--white);
+  color: var(--black);
+  border-color: rgba(255,255,255,.30);
+}
+
+.btn.primary:hover{
+  background: rgba(255,255,255,.92);
+}
+
+.btn.ghost{
+  background: transparent;
+  border-color: rgba(255,255,255,.20);
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.28);
+  color: rgba(255,255,255,.86);
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+/* --------- Sections / Cards / Grids --------- */
+section{ padding: 36px 0; }
+
+.section-title{
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 35px rgba(0,0,0,.35);
+}
+
+.pad{ padding: 18px; }
+
+.strip{
+  display:grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+}
+
+/* Gallery images */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+}
+
+.gallery-grid img{
   border-radius: 16px;
-  padding: 28px;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  filter: contrast(1.05) saturate(.92);
+  transition: .18s ease;
 }
 
-/* =========================
-   BOOKING PAGE
-========================= */
-.booking-box {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 50px;
-  text-align: center;
+.gallery-grid img:hover{
+  transform: translateY(-2px);
 }
 
-.booking-box h2 {
-  margin-bottom: 14px;
+/* Map card iframe if you still use it anywhere */
+.map-card iframe{
+  width:100%;
+  border:0;
+  border-radius: 16px;
+  min-height: 320px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.45);
 }
 
-.booking-box p {
-  color: var(--muted);
-  margin-bottom: 26px;
+/* --------- Footer --------- */
+footer{
+  margin-top: 32px;
+  padding: 24px 0 30px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer {
-  border-top: 1px solid var(--line);
-  padding: 40px 0;
-  color: var(--muted);
-  font-size: 14px;
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 14px;
+  align-items: start;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px;
+.footer-links{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.footer-links {
-  display: flex;
-  gap: 18px;
+.footer-links a{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.82);
+  font-weight: 700;
+  font-size: .92rem;
+  transition: .18s ease;
 }
 
-.footer-links a:hover {
-  color: var(--text);
+.footer-links a:hover{
+  background: rgba(255,255,255,.10);
+  color: var(--white);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .grid-3,
-  .strip,
-  .info {
-    grid-template-columns: 1fr;
+/* --------- RESPONSIVE --------- */
+@media (max-width: 920px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-right{ min-height: 260px; }
+  .strip{ grid-template-columns: 1fr; }
+  .grid-3{ grid-template-columns: 1fr; }
+  .grid-2{ grid-template-columns: 1fr; }
+  .gallery-grid{ grid-template-columns: 1fr; }
+  .footer-grid{ grid-template-columns: 1fr; }
+}
+
+/* Mobile nav drawer behavior (you already have something like this in your file) */
+@media (max-width: 860px){
+  .menu-btn{ display:inline-flex; }
+
+  /* default hidden; show by adding .open class with JS (if you already have it) */
+  nav{
+    display:none;
+    position:absolute;
+    right: 16px;
+    top: 62px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    width: min(320px, 92vw);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(11,11,11,.95);
+    box-shadow: 0 20px 60px rgba(0,0,0,.65);
   }
 
-  nav {
-    display: none;
-  }
+  nav.open{ display:flex; }
 
-  .hero {
-    min-height: 80vh;
+  nav a{
+    width: 100%;
+    justify-content: center;
   }
 }
