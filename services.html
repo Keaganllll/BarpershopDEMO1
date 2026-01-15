@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services • PLACEHOLDER BARBER LOUNGE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="name">PLACEHOLDER BARBER LOUNGE</div>
+      <div class="sub">Luxury Cuts • City, State</div>
+    </div>
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
+    <nav id="siteNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="kicker">Services</div>
+      <h1>Signature Services</h1>
+      <p class="small">Clean pricing, premium results. (Demo prices — replace later.)</p>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="service">
+          <div>
+            <h3>Classic Cut</h3>
+            <div class="small">Consult • Cut • Style</div>
+          </div>
+          <div class="price">$35</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <h3>Skin Fade</h3>
+            <div class="small">Fade • Detail • Finish</div>
+          </div>
+          <div class="price">$45</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <h3>Cut + Beard</h3>
+            <div class="small">Line-up • Beard work • Hot towel</div>
+          </div>
+          <div class="price">$60</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <h3>Beard Detail</h3>
+            <div class="small">Shape • Trim • Razor finish</div>
+          </div>
+          <div class="price">$25</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <h3>Kids Cut</h3>
+            <div class="small">Ages 12 & under</div>
+          </div>
+          <div class="price">$30</div>
+        </div>
+
+        <div class="service">
+          <div>
+            <h3>VIP Package</h3>
+            <div class="small">Cut + Beard + Enhancements</div>
+          </div>
+          <div class="price">$80</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <a class="btn primary" href="book.html">Book Now</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MAP MODAL -->
+<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
+    <div class="kicker">Directions</div>
+    <h3>Open in Maps</h3>
+    <div class="small">Choose your preferred maps app.</div>
+    <div class="row">
+      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
+      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+    <div class="close-row">
+      <button class="x" onclick="closeDirections()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
