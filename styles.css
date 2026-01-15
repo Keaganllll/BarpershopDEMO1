@@ -755,3 +755,14 @@ footer{
     text-align: center;
   }
 }
+/* ===== HERO TITLE (WELCOME TEXT) ===== */
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
