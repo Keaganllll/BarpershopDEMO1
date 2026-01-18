@@ -112,16 +112,22 @@
   const nav = document.getElementById("nav");
   btn.addEventListener("click", () => nav.classList.toggle("open"));
 
-  // Directions: Apple Maps on iPhone/iPad, Google Maps otherwise
   function openDirections(address){
-    const encoded = encodeURIComponent(address);
-    const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if(isApple){
-      window.location.href = `maps://?q=${encoded}`;
-    } else {
-      window.open(`https://www.google.com/maps/search/?api=1&query=${encoded}`, "_blank");
-    }
+  const encoded = encodeURIComponent(address);
+  const ua = navigator.userAgent || "";
+  const isIOS =
+    /iPhone|iPad|iPod/i.test(ua) ||
+    (ua.includes("Macintosh") && "ontouchend" in document);
+
+  if (isIOS) {
+    window.location.href = `maps://?q=${encoded}`;
+  } else {
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${encoded}`,
+      "_blank"
+    );
   }
+}
 </script>
 
 </body>
